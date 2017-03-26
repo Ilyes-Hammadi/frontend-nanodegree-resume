@@ -111,9 +111,9 @@ projects.display = function () {
 		if (project.images.length > 0) {
 			project.images.forEach(function (img) {
 				$('.project-entry:last').append(HTMLprojectImage.replace(data, img));
-			})
+			});
 		}
-	})
+	});
 };
 
 work.display = function () {
@@ -126,7 +126,7 @@ work.display = function () {
 			.append(HTMLworkDescription.replace(data, job.description));
 
 		$('.work-entry:last a').append(HTMLworkTitle.replace(data, job.title));
-	})
+	});
 };
 
 education.display = function () {
@@ -148,7 +148,7 @@ education.display = function () {
 
 			edu.majors.forEach(function (major) {
 				$(".education-entry:last").append(HTMLschoolMajor.replace(data, edu.majors));
-			})
+			});
 		});
 
 		// start the HTML
@@ -164,7 +164,7 @@ education.display = function () {
 
 		});
 	}
-}
+};
 
 // Display the sections
 bio.display();
