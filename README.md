@@ -1,4 +1,12 @@
 # Project Details
+
+## How to run the projtec
+```shell
+$ git clone 
+$ cd 
+$ python -m SimpleHTTPServer
+```
+
 ## How do I complete this project?
 Review the Online Resume [Project Rubric](https://review.udacity.com/?_ga=1.189245867.12280332.1465333852#!/projects/2962818615/rubric).
 
