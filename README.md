@@ -1,6 +1,6 @@
 # Project Details
 
-## How to run the projtec
+## How to run the project
 Move to the project folder and run the local server on port `8000` that has been used to get the Google Maps API key.
 ```shell
 $ git clone https://github.com/Ilyes-Hammadi/frontend-nanodegree-resume
