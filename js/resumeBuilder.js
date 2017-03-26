@@ -5,7 +5,7 @@ This is empty on purpose! Your code to build the resume will go here.
 
 
 var bio = {
-	name: 'ilyes hammadi',
+	name: 'Ilyes Hammadi',
 	role: 'Web Developer',
 	contacts: {
 		mobile: "000111222",
@@ -14,11 +14,10 @@ var bio = {
 		twitter: '@hammadiilyes',
 		location: 'Gdyel, Oran, Algeria'
 	},
-	biopic: '',
-	pictureURL: 'images/fry.jpg',
+	skills: ['Python', 'Javascript'],
 	welcomeMessage: 'Hello World',
-	skills: ['Python', 'Javascript']
-}
+	biopic: 'images/fry.jpg'
+};
 
 var education = {
 	schools: [{
@@ -35,7 +34,7 @@ var education = {
 		dates: 'May 2016 - July 2016',
 		url: ''
 	}]
-}
+};
 
 
 var work = {
@@ -46,7 +45,7 @@ var work = {
 		dates: 'May 2016 - August 2016',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus architecto autem temporibus in placeat provident accusantium fuga nisi dolor magni, illo ipsa accusamus et molestias perspiciatis labore quo impedit veniam.'
 	}]
-}
+};
 
 var projects = {
 	projects: [{
@@ -69,33 +68,33 @@ var projects = {
 			]
 		}
 	]
-}
+};
 
-const data = "%data%"
+const data = "%data%";
 
 // Projects section
 bio.display = function () {
 	$('#topContacts')
 		.before(HTMLheaderName.replace(data, bio.name))
 		.before(HTMLheaderRole.replace(data, bio.role))
-		.after(HTMLbioPic.replace(data, bio.pictureURL))
+		.after(HTMLbioPic.replace(data, bio.biopic));
 
 	$('#topContacts, #footerContacts')
 		.append(HTMLemail.replace(data, bio.contacts.email))
 		.append(HTMLmobile.replace(data, bio.contacts.mobile))
 		.append(HTMLlocation.replace(data, bio.contacts.location))
-		.append(HTMLgithub.replace(data, bio.contacts.github))
+		.append(HTMLgithub.replace(data, bio.contacts.github));
 
 	// If there a skills add theme to the header section
-	$('#header').append(HTMLskillsStart)
+	$('#header').append(HTMLskillsStart);
 	if (bio.skills.length > 0) {
 		for (let i of bio.skills) {
-			$('#skills').append(HTMLskills.replace(data, i))
+			$('#skills').append(HTMLskills.replace(data, i));
 		}
 	}
 
 
-}
+};
 
 projects.display = function () {
 	projects.projects.forEach(function (project) {
@@ -106,29 +105,29 @@ projects.display = function () {
 		$('.project-entry:last')
 			.append(HTMLprojectTitle.replace(data, project.title))
 			.append(HTMLprojectDates.replace(data, project.dates))
-			.append(HTMLprojectDescription.replace(data, project.description))
+			.append(HTMLprojectDescription.replace(data, project.description));
 
 		// If there imahe for this project
 		if (project.images.length > 0) {
 			project.images.forEach(function (img) {
-				$('.project-entry:last').append(HTMLprojectImage.replace(data, img))
+				$('.project-entry:last').append(HTMLprojectImage.replace(data, img));
 			})
 		}
 	})
-}
+};
 
 work.display = function () {
 	// Add the jobs
-	$('#workExperience').append(HTMLworkStart)
+	$('#workExperience').append(HTMLworkStart);
 	work.jobs.forEach(function (job) {
 		$('.work-entry:last').append(HTMLworkEmployer.replace(data, job.employer))
 			.append(HTMLworkDates.replace(data, job.dates))
 			.append(HTMLworkLocation.replace(data, job.location))
-			.append(HTMLworkDescription.replace(data, job.description))
+			.append(HTMLworkDescription.replace(data, job.description));
 
-		$('.work-entry:last a').append(HTMLworkTitle.replace(data, job.title))
+		$('.work-entry:last a').append(HTMLworkTitle.replace(data, job.title));
 	})
-}
+};
 
 education.display = function () {
 	'use strict';
@@ -142,13 +141,13 @@ education.display = function () {
 			$(".education-entry:last")
 				.append(HTMLschoolName.replace(data, edu.name))
 				.append(HTMLschoolDates.replace(data, edu.dates))
-				.append(HTMLschoolLocation.replace(data, edu.location))
+				.append(HTMLschoolLocation.replace(data, edu.location));
 
 			// Append degree to schoola name
 			$(".education-entry:last a").append(HTMLschoolDegree.replace(data, edu.degree));
 
 			edu.majors.forEach(function (major) {
-				$(".education-entry:last").append(HTMLschoolMajor.replace(data, edu.majors))
+				$(".education-entry:last").append(HTMLschoolMajor.replace(data, edu.majors));
 			})
 		});
 
@@ -168,10 +167,10 @@ education.display = function () {
 }
 
 // Display the sections
-bio.display()
-projects.display()
-work.display()
-education.display()
+bio.display();
+projects.display();
+work.display();
+education.display();
 
 
 // Adding a map
